@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.tx_fname = new System.Windows.Forms.TextBox();
+            this.tx_pass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tx_lname = new System.Windows.Forms.TextBox();
+            this.tx_uname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -47,14 +47,14 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Password:";
             // 
-            // tx_fname
+            // tx_pass
             // 
-            this.tx_fname.Location = new System.Drawing.Point(76, 136);
-            this.tx_fname.Margin = new System.Windows.Forms.Padding(2);
-            this.tx_fname.Name = "tx_fname";
-            this.tx_fname.PasswordChar = '*';
-            this.tx_fname.Size = new System.Drawing.Size(213, 20);
-            this.tx_fname.TabIndex = 6;
+            this.tx_pass.Location = new System.Drawing.Point(76, 136);
+            this.tx_pass.Margin = new System.Windows.Forms.Padding(2);
+            this.tx_pass.Name = "tx_pass";
+            this.tx_pass.PasswordChar = '*';
+            this.tx_pass.Size = new System.Drawing.Size(213, 20);
+            this.tx_pass.TabIndex = 6;
             // 
             // label1
             // 
@@ -66,13 +66,13 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Username:";
             // 
-            // tx_lname
+            // tx_uname
             // 
-            this.tx_lname.Location = new System.Drawing.Point(76, 95);
-            this.tx_lname.Margin = new System.Windows.Forms.Padding(2);
-            this.tx_lname.Name = "tx_lname";
-            this.tx_lname.Size = new System.Drawing.Size(213, 20);
-            this.tx_lname.TabIndex = 5;
+            this.tx_uname.Location = new System.Drawing.Point(76, 95);
+            this.tx_uname.Margin = new System.Windows.Forms.Padding(2);
+            this.tx_uname.Name = "tx_uname";
+            this.tx_uname.Size = new System.Drawing.Size(213, 20);
+            this.tx_uname.TabIndex = 5;
             // 
             // label2
             // 
@@ -94,6 +94,7 @@
             this.btn_save.TabIndex = 12;
             this.btn_save.Text = "Login";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // linkLabel1
             // 
@@ -115,9 +116,9 @@
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tx_fname);
+            this.Controls.Add(this.tx_pass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tx_lname);
+            this.Controls.Add(this.tx_uname);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -129,9 +130,9 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tx_fname;
+        private System.Windows.Forms.TextBox tx_pass;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tx_lname;
+        private System.Windows.Forms.TextBox tx_uname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.LinkLabel linkLabel1;

@@ -38,5 +38,31 @@ namespace StudentApp
                 return false;
             }
         }
+
+        public bool login(string uid, string pwd)
+        {
+            using (OleDbConnection conn = new OleDbConnection(db.connString))
+            {
+                conn.Open();
+                // Create the command to execute
+                string sqlc = "SELECT COUNT(*) as total FROM users where user_name = '" + uid + "' and pass_word = '" + pwd + "'";
+                using (db.cmd = new OleDbCommand(sqlc, conn))
+                {
+                    // Execute the command and retrieve the result
+                    int rowCount = (int)db.cmd.ExecuteScalar();
+                    if (rowCount > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+
+            }
+
+        }
     }
 }
