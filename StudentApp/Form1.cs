@@ -24,15 +24,21 @@ namespace StudentApp
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-            DateTime current_date = DateTime.Now;
-            string dateString = current_date.ToString("MM/dd/yyyy H:m ");
+            if ( String.IsNullOrEmpty( tx_lname.Text ))
+            {
+                MessageBox.Show("Last name is required.", "You've got an error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // sample validation of password
             if (tx_password.Text != tx_confirm_pw.Text)
             {
-                MessageBox.Show("Password not valid.");
+                MessageBox.Show("Password not valid.", "You've got an error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            DateTime current_date = DateTime.Now;
+            string dateString = current_date.ToString("MM/dd/yyyy H:m ");
 
             // Other validations here
             // input validation 
@@ -50,12 +56,17 @@ namespace StudentApp
 
             if (ifSuccess)
             {
-                MessageBox.Show("Registration success.");
+                MessageBox.Show("Registration success.", "You've got an error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Failed. " + user.errMsg);
+                MessageBox.Show("Failed. " + user.errMsg, "You've got an error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
         }
     }
 }
