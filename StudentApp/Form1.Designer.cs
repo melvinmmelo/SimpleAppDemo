@@ -46,6 +46,7 @@
             this.tx_confirm_pw = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tx_uname = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // tx_lname
@@ -216,12 +217,24 @@
             this.tx_uname.Size = new System.Drawing.Size(213, 20);
             this.tx_uname.TabIndex = 2;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(122, 422);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(132, 13);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Already have an account?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btn_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 496);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tx_uname);
             this.Controls.Add(this.label8);
@@ -270,6 +283,7 @@
         private System.Windows.Forms.TextBox tx_confirm_pw;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tx_uname;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

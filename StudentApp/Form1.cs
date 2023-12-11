@@ -68,5 +68,12 @@ namespace StudentApp
         {
             
         }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            Login lform = new Login();
+            lform.Show();
+        }
     }
 }
