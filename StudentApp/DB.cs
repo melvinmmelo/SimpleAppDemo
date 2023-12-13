@@ -10,13 +10,13 @@ namespace StudentApp
 {
     internal class DB
     {
-        string sqlcmd;
+        public string sqlcmd;
         public string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=G:/StudManagementSystem.mdb";
         public OleDbConnection conn;
 
         public OleDbCommand cmd;
         public OleDbDataAdapter da;
-        public DataTable dt;
+        
 
         public string errMsg;
 

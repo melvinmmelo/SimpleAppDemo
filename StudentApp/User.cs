@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,7 @@ namespace StudentApp
     {
         DB db = new DB();
         public string errMsg = "";
+        public DataTable dt;
 
         public bool save(string lname, string fname, string uname, string gender, string email, string address, string password, string registered_at)
         {
@@ -63,6 +66,26 @@ namespace StudentApp
 
             }
 
+        }
+
+        public Boolean all()
+        {
+            try
+            {
+                db.sqlcmd = "select * from users";
+                db.da = new OleDbDataAdapter(db.sqlcmd, db.conn);
+
+                dt = new DataTable();
+                db.da.Fill(dt);
+                db.da.Dispose();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errMsg = ex.ToString();
+                return false;
+            }
         }
     }
 }
