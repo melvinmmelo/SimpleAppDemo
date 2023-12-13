@@ -56,7 +56,7 @@ namespace StudentApp
 
             if (ifSuccess)
             {
-                MessageBox.Show("Registration success.", "You've got an error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Registration success.", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
