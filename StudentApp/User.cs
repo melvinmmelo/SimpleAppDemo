@@ -87,5 +87,26 @@ namespace StudentApp
                 return false;
             }
         }
+
+        public Boolean search(string key)
+        {
+            try
+            {
+                // modify the sql command based on the requirements
+                db.sqlcmd = "select * from users where last_name like '" + key + "%'";
+                db.da = new OleDbDataAdapter(db.sqlcmd, db.conn);
+
+                dt = new DataTable();
+                db.da.Fill(dt);
+                db.da.Dispose();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errMsg = ex.ToString();
+                return false;
+            }
+        }
     }
 }

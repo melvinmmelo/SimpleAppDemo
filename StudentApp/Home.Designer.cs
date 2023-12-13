@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tx_key = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,12 +56,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(720, 270);
             this.dataGridView1.TabIndex = 11;
             // 
-            // textBox1
+            // tx_key
             // 
-            this.textBox1.Location = new System.Drawing.Point(497, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 12;
+            this.tx_key.Location = new System.Drawing.Point(497, 120);
+            this.tx_key.Name = "tx_key";
+            this.tx_key.Size = new System.Drawing.Size(184, 20);
+            this.tx_key.TabIndex = 12;
             // 
             // btn_search
             // 
@@ -71,6 +71,7 @@
             this.btn_search.TabIndex = 13;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // button1
             // 
@@ -86,12 +87,13 @@
             // 
             // Home
             // 
+            this.AcceptButton = this.btn_search;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tx_key);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Name = "Home";
@@ -108,7 +110,7 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tx_key;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button button1;
     }

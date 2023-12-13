@@ -36,5 +36,11 @@ namespace StudentApp
             Login flogin = new Login();
             flogin.Show();
         }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            user.search(tx_key.Text);
+            dataGridView1.DataSource = user.dt;
+        }
     }
 }
