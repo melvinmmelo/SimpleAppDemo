@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudentApp
 {
@@ -14,6 +16,9 @@ namespace StudentApp
     {
 
         User user = new User();
+
+        public static int sudentId;
+
         public Home()
         {
             InitializeComponent();
@@ -41,6 +46,25 @@ namespace StudentApp
         {
             user.search(tx_key.Text);
             dataGridView1.DataSource = user.dt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow sr = dataGridView1.Rows[e.RowIndex];
+
+                sudentId = (int)sr.Cells["ID"].Value;
+                string id = Convert.ToString(sudentId);
+                
+
+                label1.Text = "You have selected student id " + id + ".";
+
+            }
+            else
+            {
+                MessageBox.Show("No data selected.");
+            }
         }
     }
 }
